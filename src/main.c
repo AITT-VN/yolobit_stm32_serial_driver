@@ -34,6 +34,10 @@ main(int argc, char **argv)
 	(void) argv;
 	platform_init();
 #endif
+	// reset esp32
+	gpio_clear(RESET_ESP32_PORT, RESET_ESP32_PIN);
+	platform_delay(50);
+	gpio_set(RESET_ESP32_PORT, RESET_ESP32_PIN);
 
 	while (true) {
         asm("nop");

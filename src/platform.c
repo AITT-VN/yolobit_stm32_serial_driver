@@ -141,7 +141,9 @@ void platform_init(void)
 
 	gpio_set_mode(LED_PORT, GPIO_MODE_OUTPUT_2_MHZ,
 	              GPIO_CNF_OUTPUT_PUSHPULL, led_idle_run);
-
+	gpio_set_mode(GPIOA, GPIO_MODE_OUTPUT_2_MHZ,
+	              GPIO_CNF_OUTPUT_PUSHPULL, GPIO1);
+	
 	/* Relocate interrupt vector table here */
 	extern int vector_table;
 	SCB_VTOR = (uint32_t)&vector_table;

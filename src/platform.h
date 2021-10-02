@@ -70,6 +70,11 @@ void platform_request_boot(void);
 #define LED_PORT_UART	GPIOC
 #define LED_UART	GPIO13
 
+#define RESET_PORT	GPIOA
+/* Use PA1 to reset ESP32. */
+#define RESET_ESP32_PORT	GPIOA
+#define RESET_ESP32_PIN	GPIO1
+
 #define USB_DRIVER      st_usbfs_v1_usb_driver
 #define USB_IRQ	        NVIC_USB_LP_CAN_RX0_IRQ
 #define USB_ISR	        usb_lp_can_rx0_isr
